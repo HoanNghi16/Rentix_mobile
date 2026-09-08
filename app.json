@@ -4,7 +4,7 @@
     "slug": "Rentix_mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/rentix_logo.png",
     "scheme": "rentixmobile",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
