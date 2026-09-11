@@ -51,11 +51,6 @@ return (
         style={{ flex: 1 }}
         behavior={Platform.OS === "ios" ? "padding" : undefined}
     >
-        
-        <ScrollView
-            contentContainerStyle={styles.scrollContent}
-            keyboardShouldPersistTaps="handled"
-        >
         <View style={styles.logoWrapper}>
             <Image
                 source={require("@/assets/images/rentix_logo.png")}
@@ -64,6 +59,10 @@ return (
             />
             {/* <Text style={styles.logoText}>Rentix</Text> */}
         </View>
+        <ScrollView
+            contentContainerStyle={styles.scrollContent}
+            keyboardShouldPersistTaps="handled"
+        >
         <View style={styles.card}>
             <Text style={styles.title}>Đăng nhập</Text>
             <Text style={styles.subtitle}>
@@ -111,7 +110,8 @@ StyleSheet.create({
     logoWrapper: {
         backgroundColor: colors.background,
         padding: "auto",
-        height: "20%",
+        flex: 1,
+        maxHeight: "30%",
         justifyContent: "center",
         alignContent: "center",
         alignItems: "center",
@@ -129,17 +129,16 @@ StyleSheet.create({
     scrollContent: {
         flexGrow: 1,
         alignItems: "center",
-        justifyContent: "center",
         paddingHorizontal: 16,
-        paddingVertical: 24,
+        paddingBottom: 24,
     },
     card: {
         width: "100%",
         maxWidth: 420,
-        backgroundColor: "#000",
+        backgroundColor: colors.surfaceSecondary,
         borderRadius: 32,
         paddingTop: 40,
-        paddingBottom: 40,
+        paddingBottom: 50,
         paddingHorizontal: 24,
         shadowOffset: { width: 0, height: 8 },
         shadowOpacity: 0.08,

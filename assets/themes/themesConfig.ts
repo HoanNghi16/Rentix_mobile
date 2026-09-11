@@ -2,12 +2,13 @@ import { ThemeType } from "@/types/themes";
 
 export const THEMES: ThemeType = {
   light: {
-    background: "#F8FAFC",
+    background: "#daecfc",
     buttonBackground: "#2563EB",
     buttonText: "#FFFFFF",
     primaryText: "#0F172A",
-    secondaryText: "#64748B",
-    surface: "#FFFFFF",
+    secondaryText: "#cad7eb",
+    surface: "#ffffff",
+    surfaceSecondary: "#83a0cb"
   },
 
   dark: {
@@ -17,5 +18,6 @@ export const THEMES: ThemeType = {
     primaryText: "#F8FAFC",
     secondaryText: "#94A3B8",
     surface: "#1E293B",
+    surfaceSecondary: "#000",
   },
 };

@@ -1,6 +1,7 @@
 import { useColor } from "@/providers/colors/colorProvider";
 import { ColorType } from "@/types/themes";
-import { Bell } from "lucide-react-native";
+import { router } from "expo-router";
+import { Bell, MessageCircle } from "lucide-react-native";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 type Props = {
@@ -23,12 +24,17 @@ export default function AppHeader({ showNotification = true, onPressNotification
         />
         <Text style={styles.brand}>Rentix</Text>
       </View>
-
-      {showNotification && (
-        <TouchableOpacity style={styles.iconButton} onPress={onPressNotification} hitSlop={10}>
-          <Bell size={22} color={colors.primaryText} />
+      <View style={styles.buttonWrapper}>
+        <TouchableOpacity style={styles.iconButton} onPress={()=>router.push("/chat")} hitSlop={10}>
+            <MessageCircle size={22} color={colors.primaryText} />
         </TouchableOpacity>
-      )}
+        {showNotification && (
+          <TouchableOpacity style={styles.iconButton} onPress={onPressNotification} hitSlop={10}>
+            <Bell size={22} color={colors.primaryText} />
+          </TouchableOpacity>
+        )}
+      </View>
+      
     </View>
   );
 }
@@ -36,32 +42,36 @@ export default function AppHeader({ showNotification = true, onPressNotification
 const createStyleSheet = (colors: ColorType) =>
   StyleSheet.create({
     container: {
-      height: 56,
-      paddingHorizontal: 20,
+      height: "10%",
+      paddingHorizontal: 14,
+      paddingRight: 20,
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "space-between",
       backgroundColor: colors.background,
-      borderBottomWidth: 1,
-      borderBottomColor: colors.surface,
     },
     left: {
       flexDirection: "row",
       alignItems: "center",
-      gap: 8,
+      gap: 2,
     },
     logo: {
-      width: 28,
-      height: 28,
+      width: 40,
+      height:40,
     },
     brand: {
       color: colors.primaryText,
-      fontSize: 18,
+      fontSize: 25,
       fontWeight: "700",
     },
+    buttonWrapper:{
+      flexDirection:"row",
+      gap: 8,
+    }
+    ,
     iconButton: {
-      width: 38,
-      height: 38,
+      width: 40,
+      height: 40,
       borderRadius: 19,
       alignItems: "center",
       justifyContent: "center",

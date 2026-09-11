@@ -9,4 +9,5 @@ export interface ColorType {
     secondaryText: string
     buttonBackground: string
     buttonText: string
+    surfaceSecondary: string
 }
