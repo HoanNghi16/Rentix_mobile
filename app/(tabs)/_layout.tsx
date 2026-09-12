@@ -1,7 +1,7 @@
 import AppHeader from "@/components/layout/appHeader";
 import { useColor } from "@/providers/colors/colorProvider";
 import { Tabs } from "expo-router";
-import { FileText, Home, Receipt, User } from "lucide-react-native";
+import { FileText, Home, Receipt, ScanSquare, User } from "lucide-react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function TabsLayout() {
@@ -39,6 +39,13 @@ export default function TabsLayout() {
           options={{
             title: "Hợp đồng",
             tabBarIcon: ({ color, size }) => <FileText color={color} size={size} />,
+          }}
+        />
+        <Tabs.Screen
+          name="electScan"
+          options={{
+            title: "Số điện",
+            tabBarIcon: (props)=> <ScanSquare {...props}/>
           }}
         />
         <Tabs.Screen

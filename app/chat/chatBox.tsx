@@ -1,13 +1,13 @@
 import { useRef, useState } from 'react';
 import {
-    FlatList,
-    KeyboardAvoidingView,
-    Platform,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  FlatList,
+  KeyboardAvoidingView,
+  Platform,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 
 import { useColor } from '@/providers/colors/colorProvider';
@@ -121,7 +121,7 @@ export default function ChatScreen() {
   return (
     <KeyboardAvoidingView
       style={styles.container}
-      behavior={Platform.OS === 'ios' ? 'padding' : "padding"}
+      behavior={Platform.OS === 'ios' ? 'padding' : "height"}
     >
       {/* Header */}
       <View style={styles.header}>
